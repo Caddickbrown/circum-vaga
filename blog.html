@@ -1,110 +1,135 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog — Circum Vaga</title>
-  <meta name="description" content="News, match reports and updates from Circum Vaga charity cricket.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="News, match reports and fundraising updates from Circum Vaga charity cricket team.">
+  <meta name="theme-color" content="#f7f3ea">
+  <link rel="canonical" href="https://circumvaga.co.uk/blog">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Circum Vaga">
+  <meta property="og:title" content="From the team — Circum Vaga">
+  <meta property="og:description" content="Match reports, fundraising news and season updates from Circum Vaga.">
+  <meta property="og:url" content="https://circumvaga.co.uk/blog">
+  <meta property="og:image" content="https://circumvaga.co.uk/assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/assets/favicon-64.png" sizes="64x64" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<nav>
-  <a class="nav-logo" href="index.html">Circum <span>Vaga</span></a>
-  <a href="index.html">Home</a>
-  <a href="winners.html">Winners</a>
-  <a href="sponsors.html">Sponsors</a>
-  <a href="blog.html" class="active">Blog</a>
-</nav>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<section class="hero" style="padding: 64px 24px 56px;">
-  <div class="hero-eyebrow">News &amp; updates</div>
-  <h1>From the team</h1>
-  <p>Match reports, fundraising news and season updates from Circum Vaga.</p>
-</section>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/" aria-label="Circum Vaga home">
+      <img src="/assets/logo.png" alt="" width="36" height="79">
+      <span class="brand-name">Circum Vaga</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/winners">Winners</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/sponsors" class="nav-cta">Sponsor us</a>
+    </nav>
+  </div>
+</header>
 
-<section>
-  <div class="container-wide">
+<main id="main">
 
-    <!-- Filter bar -->
-    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;">
-      <button class="btn btn-green" style="font-size: 12px; padding: 6px 16px; border-radius: 99px;" onclick="filterPosts('all')">All</button>
-      <button class="btn" style="font-size: 12px; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent;" onclick="filterPosts('match-report')">Match reports</button>
-      <button class="btn" style="font-size: 12px; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent;" onclick="filterPosts('news')">News</button>
-      <button class="btn" style="font-size: 12px; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent;" onclick="filterPosts('fundraising')">Fundraising</button>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">News &amp; updates</p>
+      <h1>From the team</h1>
+      <p class="lead">Match reports, fundraising news and season updates from Circum Vaga.</p>
     </div>
+  </section>
 
-    <div class="grid-3" id="posts-grid">
+  <section>
+    <div class="container">
 
-      <!-- Post 1 — Welcome -->
-      <a class="post-card" href="#" data-tag="news">
-        <div class="post-card-body">
+      <div class="filters" role="group" aria-label="Filter posts">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="match-report" aria-pressed="false">Match reports</button>
+        <button class="chip" type="button" data-filter="news" aria-pressed="false">News</button>
+        <button class="chip" type="button" data-filter="fundraising" aria-pressed="false">Fundraising</button>
+      </div>
+      <p id="filter-status" class="visually-hidden" aria-live="polite"></p>
+
+      <div class="grid grid--3" id="posts">
+
+        <article class="post" data-tag="news">
           <div class="post-meta">
             <span class="post-tag">News</span>
-            <span>Sep 2025</span>
+            <time datetime="2025-09">September 2025</time>
           </div>
           <h3>Welcome to Circum Vaga</h3>
           <p>We're launching this season with a new website, a new kit, and two brilliant charities to play for. Here's everything you need to know about who we are and what we're doing.</p>
-        </div>
-      </a>
+          <a class="read-more" href="/#about">Read about the team</a>
+        </article>
 
-      <!-- Post 2 — Sponsor appeal -->
-      <a class="post-card" href="#" data-tag="news">
-        <div class="post-card-body">
+        <article class="post" data-tag="news">
           <div class="post-meta">
             <span class="post-tag">News</span>
-            <span>Sep 2025</span>
+            <time datetime="2025-09">September 2025</time>
           </div>
           <h3>Sponsorship packages now open</h3>
-          <p>We're looking for businesses to partner with us this season. Main Sponsor slots — including your logo on the kit — are available now. General sponsorship starts at just £50.</p>
-        </div>
-      </a>
+          <p>We're looking for businesses to partner with us this season. Main Sponsor slots, including your logo on the front of the kit, are available now. General sponsorship starts at just £50.</p>
+          <a class="read-more" href="/sponsors">See the packages</a>
+        </article>
 
-      <!-- Placeholder post 3 -->
-      <a class="post-card" href="#" data-tag="match-report" style="border: 2px dashed var(--border);">
-        <div class="post-card-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px; text-align: center; color: var(--muted);">
-          <div style="font-size: 32px; margin-bottom: 12px;">🏏</div>
-          <p style="font-size: 14px;">Match reports appear here after each fixture.</p>
+        <div class="post post--placeholder" data-tag="match-report" aria-label="Match reports coming soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 4.2c3.2 4.6 3.2 11 0 15.6M15.5 4.2c-3.2 4.6-3.2 11 0 15.6"/></svg>
+          <p>Match reports appear here after each fixture.</p>
         </div>
-      </a>
+
+      </div>
+
+      <div class="newsletter" style="margin-top: clamp(48px, 7vw, 80px);">
+        <p class="eyebrow">Stay in the loop</p>
+        <h2>Get updates by email</h2>
+        <p>Match reports, fundraising news and season updates, straight to your inbox. No spam, and you can unsubscribe any time.</p>
+        <form id="signup-form" data-to="thomasdavidpearson0@gmail.com">
+          <label for="signup-email" class="visually-hidden">Email address</label>
+          <input type="email" id="signup-email" name="email" placeholder="your@email.com" autocomplete="email" required>
+          <button type="submit" class="btn btn--red">Subscribe</button>
+        </form>
+        <p id="signup-note" class="form-note"></p>
+      </div>
 
     </div>
+  </section>
 
-    <!-- Newsletter signup -->
-    <div style="margin-top: 64px; padding: 40px; background: var(--green); border-radius: var(--r); color: var(--cream); text-align: center;">
-      <div class="section-eyebrow" style="color: var(--gold);">Stay in the loop</div>
-      <h2 style="color: var(--cream); margin-bottom: 12px;">Get updates by email</h2>
-      <p style="color: rgba(245,240,232,0.75); font-size: 15px; max-width: 480px; margin: 0 auto 28px;">Match reports, fundraising news and season updates — straight to your inbox. No spam, unsubscribe any time.</p>
-      <form onsubmit="handleSignup(event)" style="display: flex; gap: 10px; max-width: 420px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
-        <input type="email" placeholder="your@email.com" required id="signup-email"
-          style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: var(--cream);">
-        <button type="submit" class="btn btn-gold">Subscribe</button>
-      </form>
-      <p id="signup-msg" style="margin-top: 14px; font-size: 13px; color: var(--gold); min-height: 20px;"></p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <img src="/assets/logo.png" alt="" width="30" height="66">
+      <span>Circum Vaga · Charity cricket</span>
     </div>
-
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/winners">Winners</a>
+      <a href="/blog">Blog</a>
+      <a href="/sponsors">Sponsors</a>
+    </nav>
+    <div class="footer-meta">
+      <span>Raising money for Help for Heroes and the RFU Injured Players Foundation.</span>
+      <span><a href="mailto:thomasdavidpearson0@gmail.com">thomasdavidpearson0@gmail.com</a> · circumvaga.co.uk</span>
+    </div>
   </div>
-</section>
-
-<footer>
-  <div class="footer-logo">Circum Vaga</div>
-  <p>Charity cricket · <a href="mailto:thomasdavidpearson0@gmail.com">thomasdavidpearson0@gmail.com</a> · circumvaga.co.uk</p>
 </footer>
 
-<script>
-  function filterPosts(tag) {
-    document.querySelectorAll('.post-card').forEach(card => {
-      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? 'block' : 'none';
-    });
-  }
-
-  function handleSignup(e) {
-    e.preventDefault();
-    const email = document.getElementById('signup-email').value;
-    document.getElementById('signup-msg').textContent = `Thanks! We'll be in touch at ${email}.`;
-    e.target.reset();
-  }
-</script>
-
+<script src="/site.js" defer></script>
 </body>
 </html>
