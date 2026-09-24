@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Circum Vaga</title>
+  <meta name="description" content="News, match reports and updates from Circum Vaga charity cricket.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Circum <span>Vaga</span></a>
+  <a href="index.html">Home</a>
+  <a href="winners.html">Winners</a>
+  <a href="sponsors.html">Sponsors</a>
+  <a href="blog.html" class="active">Blog</a>
+</nav>
+
+<section class="hero" style="padding: 64px 24px 56px;">
+  <div class="hero-eyebrow">News &amp; updates</div>
+  <h1>From the team</h1>
+  <p>Match reports, fundraising news and season updates from Circum Vaga.</p>
+</section>
+
+<section>
+  <div class="container-wide">
+
+    <!-- Filter bar -->
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;">
+      <button class="btn btn-green" style="font-size: 12px; padding: 6px 16px; border-radius: 99px;" onclick="filterPosts('all')">All</button>
+      <button class="btn" style="font-size: 12px; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent;" onclick="filterPosts('match-report')">Match reports</button>
+      <button class="btn" style="font-size: 12px; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent;" onclick="filterPosts('news')">News</button>
+      <button class="btn" style="font-size: 12px; padding: 6px 16px; border-radius: 99px; border: 1.5px solid var(--border); background: transparent;" onclick="filterPosts('fundraising')">Fundraising</button>
+    </div>
+
+    <div class="grid-3" id="posts-grid">
+
+      <!-- Post 1 — Welcome -->
+      <a class="post-card" href="#" data-tag="news">
+        <div class="post-card-body">
+          <div class="post-meta">
+            <span class="post-tag">News</span>
+            <span>Sep 2025</span>
+          </div>
+          <h3>Welcome to Circum Vaga</h3>
+          <p>We're launching this season with a new website, a new kit, and two brilliant charities to play for. Here's everything you need to know about who we are and what we're doing.</p>
+        </div>
+      </a>
+
+      <!-- Post 2 — Sponsor appeal -->
+      <a class="post-card" href="#" data-tag="news">
+        <div class="post-card-body">
+          <div class="post-meta">
+            <span class="post-tag">News</span>
+            <span>Sep 2025</span>
+          </div>
+          <h3>Sponsorship packages now open</h3>
+          <p>We're looking for businesses to partner with us this season. Main Sponsor slots — including your logo on the kit — are available now. General sponsorship starts at just £50.</p>
+        </div>
+      </a>
+
+      <!-- Placeholder post 3 -->
+      <a class="post-card" href="#" data-tag="match-report" style="border: 2px dashed var(--border);">
+        <div class="post-card-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px; text-align: center; color: var(--muted);">
+          <div style="font-size: 32px; margin-bottom: 12px;">🏏</div>
+          <p style="font-size: 14px;">Match reports appear here after each fixture.</p>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- Newsletter signup -->
+    <div style="margin-top: 64px; padding: 40px; background: var(--green); border-radius: var(--r); color: var(--cream); text-align: center;">
+      <div class="section-eyebrow" style="color: var(--gold);">Stay in the loop</div>
+      <h2 style="color: var(--cream); margin-bottom: 12px;">Get updates by email</h2>
+      <p style="color: rgba(245,240,232,0.75); font-size: 15px; max-width: 480px; margin: 0 auto 28px;">Match reports, fundraising news and season updates — straight to your inbox. No spam, unsubscribe any time.</p>
+      <form onsubmit="handleSignup(event)" style="display: flex; gap: 10px; max-width: 420px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+        <input type="email" placeholder="your@email.com" required id="signup-email"
+          style="flex: 1; min-width: 200px; background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: var(--cream);">
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+      <p id="signup-msg" style="margin-top: 14px; font-size: 13px; color: var(--gold); min-height: 20px;"></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Circum Vaga</div>
+  <p>Charity cricket · <a href="mailto:thomasdavidpearson0@gmail.com">thomasdavidpearson0@gmail.com</a> · circumvaga.co.uk</p>
+</footer>
+
+<script>
+  function filterPosts(tag) {
+    document.querySelectorAll('.post-card').forEach(card => {
+      card.style.display = (tag === 'all' || card.dataset.tag === tag) ? 'block' : 'none';
+    });
+  }
+
+  function handleSignup(e) {
+    e.preventDefault();
+    const email = document.getElementById('signup-email').value;
+    document.getElementById('signup-msg').textContent = `Thanks! We'll be in touch at ${email}.`;
+    e.target.reset();
+  }
+</script>
+
+</body>
+</html>
