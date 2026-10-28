@@ -1,24 +1,27 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
+  "routes": [
     {
-      "source": "/football/:path*",
+      "src": "/football(/.*)?",
       "has": [{ "type": "host", "value": "(www\\.)?circumvaga\\.co\\.uk" }],
-      "destination": "https://football.circumvaga.co.uk/:path*",
-      "permanent": false
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "football.circumvaga.co.uk" }],
-      "destination": "/football"
+      "status": 307,
+      "headers": { "Location": "https://football.circumvaga.co.uk$1" }
     },
     {
-      "source": "/:path+",
+      "src": "/",
       "has": [{ "type": "host", "value": "football.circumvaga.co.uk" }],
-      "destination": "/football/:path+"
-    }
+      "dest": "/football/index.html"
+    },
+    {
+      "src": "/(.+)",
+      "has": [{ "type": "host", "value": "football.circumvaga.co.uk" }],
+      "dest": "/football/$1"
+    },
+    {
+      "src": "/(blog|sponsors|winners)\\.html",
+      "status": 308,
+      "headers": { "Location": "/$1" }
+    },
+    { "handle": "filesystem" },
+    { "src": "/(blog|sponsors|winners)", "dest": "/$1.html" }
   ]
 }
