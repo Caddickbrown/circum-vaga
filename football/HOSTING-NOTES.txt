@@ -1,0 +1,50 @@
+BOVRIL & GLORY: HOSTING NOTES
+=============================
+
+What this is
+------------
+A 1960s football management game that runs entirely in the player's browser.
+It is a plain static website: no server code, no database, no build step,
+nothing to install.
+
+Files (upload all four into the same folder)
+--------------------------------------------
+  index.html            the page itself
+  game.js               the game
+  data.js               the 1960-61 clubs and players
+  apple-touch-icon.png  the icon for iPhone and iPad home screens
+
+Putting it online
+-----------------
+1. Unzip and upload the four files, keeping them together in one folder
+   (the site root, or a subfolder such as /bovril/).
+2. Serve it over HTTPS.
+3. Open the address in a browser. The title page should appear with a
+   leather football in the browser tab.
+
+Any ordinary web host works (shared hosting, Netlify, GitHub Pages,
+Cloudflare Pages and so on). No special server settings are needed.
+
+IMPORTANT: keep the address the same
+------------------------------------
+Each player's career is saved in their own browser, and the browser files it
+under the exact web address. If the address changes later, players will not
+see their saves any more. That includes:
+  - moving it to a different domain or subfolder
+  - switching between http:// and https://
+  - switching between www.example.com and example.com
+So pick one address and redirect the others to it (for example, send
+example.com to www.example.com, or the other way round) from day one.
+
+Privacy and security
+--------------------
+- Saves never leave the player's browser. Nothing is sent to the website,
+  and the site owner cannot see anyone's save.
+- The only outside connection is Google Fonts, for the typefaces.
+- The game runs entirely in the browser, so there is nothing on the server
+  for anyone to attack.
+
+Updating the game later
+-----------------------
+Upload the new files over the old ones at the same address. Players' saves
+are kept. If players see the old version, ask them to refresh the page.
