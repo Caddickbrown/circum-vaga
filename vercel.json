@@ -13,7 +13,7 @@
     {
       "source": "/",
       "has": [{ "type": "host", "value": "football.circumvaga.co.uk" }],
-      "destination": "/football/index.html"
+      "destination": "/football"
     },
     {
       "source": "/:path+",
